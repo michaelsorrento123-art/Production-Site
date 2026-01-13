@@ -1,36 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Assignments</title>
-<style>
-body {
-font-family: Arial, sans-serif;
-background-color: #f4f4f4;
-padding: 40px;
-}
-a {
-color: #0066cc;
-text-decoration: none;
-font-size: 18px;
-}
-a:hover {
-text-decoration: underline;
-}
-</style>
+  <meta charset="UTF-8">
+  <title>Module 8 – Data Collection Analysis</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 900px;
+      margin: 40px auto;
+      line-height: 1.6;
+      background-color: #ffffff;
+      padding: 20px;
+    }
+    h1, h2, h3 {
+      margin-top: 30px;
+    }
+    ul {
+      margin-left: 20px;
+    }
+    a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+    img {
+      border: 1px solid #ccc;
+      margin-top: 10px;
+    }
+  </style>
 </head>
 <body>
 
-<h1>Assignments</h1>
+<h1>Module 8: Data Collection Analysis</h1>
 
-<p>Select a module below:</p>
+<h2>1. Platform Chosen</h2>
+<p><strong>Platform:</strong> Instagram</p>
 
+<h2>2. Link and Screenshot</h2>
+<p><strong>Sign-up Page URL:</strong><br>
+<a href="https://www.instagram.com/accounts/emailsignup/" target="_blank">
+https://www.instagram.com/accounts/emailsignup/
+</a>
+</p>
+
+<p><strong>Screenshot of the sign-up interface:</strong></p>
+<p>(Screenshot shows a blank Instagram sign-up form with no personal data entered.)</p>
+
+<!-- OPTIONAL IMAGE: upload a screenshot and keep this line -->
+<!-- <img src="instagram-signup.png" alt="Instagram sign-up form" width="600"> -->
+
+<h2>3. Description of the System</h2>
+<p>
+Instagram is a social media platform that allows users to share photos, videos, and messages.
+Creating an account requires users to enter identifying information such as an email address
+or phone number and a password. This sign-up process allows Instagram to create user profiles
+and provide access to its social networking features. The collected data supports account
+management, personalization, and security.
+</p>
+
+<h2>4. Data Collected</h2>
+
+<h3>Visible form fields</h3>
 <ul>
-<li><a href="module8.html">Module 8</a></li>
+  <li>Email address or phone number</li>
+  <li>Full name</li>
+  <li>Username</li>
+  <li>Password</li>
+</ul>
+
+<h3>Inferred data likely collected</h3>
+<ul>
+  <li>IP address</li>
+  <li>Device type and operating system</li>
+  <li>Browser information</li>
+  <li>Approximate location</li>
+</ul>
+
+<h3>Behavioral data tracked after sign-up</h3>
+<ul>
+  <li>Likes, comments, and follows</li>
+  <li>Time spent viewing posts</li>
+  <li>Search activity</li>
+  <li>Interaction with advertisements</li>
+</ul>
+
+<h2>5. Conceptual Database Structure</h2>
+
+<h3>Primary Table: users</h3>
+<ul>
+  <li>user_id (primary key)</li>
+  <li>email</li>
+  <li>username</li>
+  <li>hashed_password</li>
+  <li>full_name</li>
+  <li>created_at</li>
+  <li>last_login</li>
+</ul>
+
+<h3>Related Table: activity_log</h3>
+<ul>
+  <li>activity_id (primary key)</li>
+  <li>user_id (foreign key)</li>
+  <li>activity_type</li>
+  <li>content_id</li>
+  <li>timestamp</li>
+</ul>
+
+<p>
+<strong>Relationship explanation:</strong>
+The user_id field links the users table to the activity_log table, allowing the system
+to associate each recorded activity with a specific user.
+</p>
+
+<h2>6. Ethical Analysis</h2>
+<p>
+One ethical concern is privacy, as Instagram collects personal and behavioral data that can
+reveal detailed information about a user’s habits and preferences. Another concern is
+surveillance, since users may not fully understand the extent of data tracking that occurs
+after sign-up. If this data were breached or misused, users could face identity theft,
+manipulation, or loss of privacy. These risks increase when data is retained long-term or
+shared with third parties.
+</p>
+
+<h2>7. Recommendations</h2>
+<ul>
+  <li>Collect fewer behavioral data points by default.</li>
+  <li>Use clearer and more transparent consent language during sign-up.</li>
+  <li>Limit third-party access to user data.</li>
 </ul>
 
 <br>
-<a href="index.html">← Back to Home</a>
+<a href="assignments.html">← Back to Assignments</a>
 
 </body>
 </html>
