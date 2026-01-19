@@ -1,0 +1,11 @@
+customer_id,first_name,last_name,city,province_state,country,total_tickets,total_spend
+5,Tim,Minchin,North York,ON,Canada,13,130.0
+3,Susan,Daly,Toronto,ON,Canada,10,100.0
+1,Paul,Tillberg,Los Angeles,CA,USA,8,80.0
+4,Bill,Clinton,Toronto,ON,Canada,7,70.0
+10,Lauren,Miller,Hamilton,ON,Canada,7,70.0
+14,Mike,Davis,Halifax,NS,Canada,7,70.0
+2,John,Troung,Toronto,ON,Canada,6,60.0
+9,Sarah,Krainin,Toronto,ON,Canada,5,50.0
+13,Jeff,Kira,Calgary,AB,Canada,5,50.0
+15,Jason,Kennedy,Laval,QC,Canada,5,50.0

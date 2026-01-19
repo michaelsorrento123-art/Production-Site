@@ -1,0 +1,28 @@
+Customers
+- customer_id (PK)
+- first_name
+- last_name
+- address1
+- address2
+- city
+- province_state
+- postcode
+- country
+
+Shows
+- show_id (PK)
+- title
+- author
+- show_date
+- show_time
+
+Orders
+- order_id (PK)
+- customer_id (FK -> Customers.customer_id)
+- show_id (FK -> Shows.show_id)
+- qty
+- price
+
+Relationships
+Customers 1 --- many Orders
+Shows     1 --- many Orders

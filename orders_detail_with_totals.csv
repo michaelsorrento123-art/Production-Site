@@ -1,0 +1,41 @@
+order_id,customer_name,show_title,show_date,qty,price,order_total
+1,John Troung,12th Night,10-Jan-14,2,10.0,20.0
+2,Susan Daly,12th Night,10-Jan-14,3,10.0,30.0
+3,Laura Mason,Romeo and Juliet,11-Jan-14,2,10.0,20.0
+4,Tim Minchin,Romeo and Juliet,11-Jan-14,4,10.0,40.0
+5,Michael Crowley,Lear,12-Jan-14,2,10.0,20.0
+6,Julie Briggs,Lear,12-Jan-14,1,10.0,10.0
+7,Sarah Krainin,Death of a Saleman,13-Jan-14,2,10.0,20.0
+8,Lauren Miller,Death of a Saleman,13-Jan-14,3,10.0,30.0
+9,Paul Tillberg,Long Day's Journey Into Night,14-Jan-14,4,10.0,40.0
+10,Laura Mason,Long Day's Journey Into Night,14-Jan-14,2,10.0,20.0
+11,Paul Tillberg,A Doll's House,15-Jan-14,1,10.0,10.0
+12,Bill Clinton,A Doll's House,15-Jan-14,3,10.0,30.0
+13,Tim Minchin,Ghosts,01-Feb-14,4,10.0,40.0
+14,Michael Crowley,Ghosts,01-Feb-14,2,10.0,20.0
+15,Jeff Kira,Terra Nova,05-Feb-14,3,10.0,30.0
+16,Susan Daly,Terra Nova,05-Feb-14,1,10.0,10.0
+17,Jeff Kira,Baltimore Waltz,04-Mar-14,2,10.0,20.0
+18,Ellen Geer,Baltimore Waltz,04-Mar-14,3,10.0,30.0
+19,Mike Davis,Dirty Story,15-Apr-14,4,10.0,40.0
+20,Jason Kennedy,Dirty Story,15-Apr-14,1,10.0,10.0
+21,John Troung,Baltimore Waltz,04-Mar-14,1,10.0,10.0
+22,Susan Daly,Baltimore Waltz,04-Mar-14,2,10.0,20.0
+23,Mike Davis,Terra Nova,05-Feb-14,3,10.0,30.0
+24,Tim Minchin,Terra Nova,05-Feb-14,4,10.0,40.0
+25,Thomas Quintas,Ghosts,01-Feb-14,1,10.0,10.0
+26,Julie Briggs,Ghosts,01-Feb-14,2,10.0,20.0
+27,Sarah Krainin,A Doll's House,15-Jan-14,3,10.0,30.0
+28,Lauren Miller,A Doll's House,15-Jan-14,4,10.0,40.0
+29,Courtney Page,Long Day's Journey Into Night,14-Jan-14,1,10.0,10.0
+30,Colin Quinn,Long Day's Journey Into Night,14-Jan-14,2,10.0,20.0
+31,Paul Tillberg,Death of a Saleman,13-Jan-14,3,10.0,30.0
+32,Bill Clinton,Death of a Saleman,13-Jan-14,4,10.0,40.0
+33,Tim Minchin,Lear,12-Jan-14,1,10.0,10.0
+34,Thomas Quintas,Lear,12-Jan-14,2,10.0,20.0
+35,John Troung,Romeo and Juliet,11-Jan-14,3,10.0,30.0
+36,Susan Daly,Romeo and Juliet,11-Jan-14,4,10.0,40.0
+37,Colin Quinn,Dirty Story,15-Apr-14,1,10.0,10.0
+38,Ellen Geer,Dirty Story,15-Apr-14,2,10.0,20.0
+39,Megan Smith,12th Night,10-Jan-14,3,10.0,30.0
+40,Jason Kennedy,12th Night,10-Jan-14,4,10.0,40.0
