@@ -1,39 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Database Project</title>
+<meta charset="UTF-8">
+<title>Database Project</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  max-width: 900px;
+  margin: 40px auto;
+  line-height: 1.6;
+}
+h1, h2, h3 {
+  margin-top: 30px;
+}
+pre, code {
+  background: #f4f4f4;
+  padding: 10px;
+  display: block;
+  overflow-x: auto;
+}
+a {
+  color: #0066cc;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+</style>
 </head>
 <body>
 
 <h1>Database Project</h1>
 
 <p>
-This project demonstrates how CSV data can be organized into a relational
-database and queried to analyze customers, shows, and ticket sales.
+This project explores how raw CSV data can be organized into a relational
+database and queried to better understand customer activity, events,
+and ticket sales.
 </p>
 
-<h2>Overview</h2>
+<hr>
+
+<h2>Project Overview</h2>
 
 <p>
-The dataset contains three CSV files:
+The dataset provided for this project consists of three CSV files that
+represent a small ticketing system. Each file contains information about
+a different part of the system.
 </p>
 
 <ul>
-  <li>Customers</li>
-  <li>Shows</li>
-  <li>Orders</li>
+  <li><strong>Customers</strong> – individuals purchasing tickets</li>
+  <li><strong>Shows</strong> – events available for purchase</li>
+  <li><strong>Orders</strong> – transactions connecting customers to shows</li>
 </ul>
 
 <p>
-These were converted into a relational database using primary and foreign keys.
+Rather than working with these files as separate spreadsheets, the data
+was combined into a relational database so that relationships between
+customers, shows, and orders could be clearly defined and queried.
 </p>
 
-<h2>Conclusion</h2>
+<hr>
+
+<h2>Database Design</h2>
 
 <p>
-This project shows how relational databases allow structured data to be queried
-in meaningful ways.
+The database was designed using three tables: Customers, Shows, and Orders.
+Each table has a primary key, and the Orders table uses foreign keys to
+reference both customers and shows.
+</p>
+
+<p>
+This structure creates two one-to-many relationships:
+</p>
+
+<ul>
+  <li>One customer can place many orders</li>
+  <li>One show can appear in many orders</li>
+</ul>
+
+<p>
+This design reduces data duplication and allows information to be
+retrieved efficiently using joins.
+</p>
+
+<hr>
+
+<h2>Analytical Questions</h2>
+
+<p>
+To demonstrate how the database can be queried, the following questions
+were explored:
+</p>
+
+<ul>
+  <li>Which shows generated the most revenue?</li>
+  <li>Which customers spent the most on tickets?</li>
+</ul>
+
+<hr>
+
+<h2>SQL Queries</h2>
+
+<h3>Revenue by Show</h3>
+
+<pre><code>
+SELECT 
+  s.title,
+  SUM(o.qty * o.price) AS total_revenue
+FROM Orders o
+JOIN Shows s ON o.show_id = s.show_id
+GROUP BY s.title
+ORDER BY total_revenue DESC;
+</code></pre>
+
+<h3>Top Customers by Spending</h3>
+
+<pre><code>
+SELECT 
+  c.first_name || ' ' || c.last_name AS customer_name,
+  SUM(o.qty * o.price) AS total_spent
+FROM Orders o
+JOIN Customers c ON o.customer_id = c.customer_id
+GROUP BY c.customer_id
+ORDER BY total_spent DESC;
+</code></pre>
+
+<hr>
+
+<h2>Results Summary</h2>
+
+<p>
+The results show clear differences in both show popularity and customer
+spending. Some shows generated significantly more revenue than others,
+and a small number of customers accounted for a large portion of total
+ticket sales.
+</p>
+
+<p>
+These queries demonstrate how a relational database can be used to extract
+meaningful insights from structured data.
+</p>
+
+<hr>
+
+<h2>Step-by-Step Process (Proof)</h2>
+
+<ol>
+  <li>Downloaded and reviewed the provided CSV files.</li>
+  <li>Identified entities and relationships within the data.</li>
+  <li>Designed a relational schema with primary and foreign keys.</li>
+  <li>Created the database using SQLite.</li>
+  <li>Imported the CSV data into the appropriate tables.</li>
+  <li>Validated relationships and record counts.</li>
+  <li>Executed SQL queries to analyze ticket sales and revenue.</li>
+</ol>
+
+<hr>
+
+<h2>Working Files</h2>
+
+<p>
+The database file, SQL scripts, and exported query results used in this
+project are available upon request.
 </p>
 
 </body>
