@@ -64,15 +64,19 @@
       </ul>
     </li>
     <li>
-      Relationships were created so that each order is linked to a customer and a show.
+      Relationships were created so that each order is linked to a customer and a show. 
+      More spesifically, People ID to Customers ID and Show ID (under orders) to ID under shows.
+      This was done to filter out 1 person who saw multiple shows or multiple show times which would have 
+      messed up the results from the queery.
+    </li>
+
+    <li>
+      A query was created to filter for <strong>Julie Briggs</strong> and display all of her ticket purchases. Along with the show she watched,
+      her customer ID and the quantity of tikcets she bought. This was done by draging these spesific filters into the queery box just underneath the tables 
+      in Libre Office.
     </li>
     <li>
-      The provided data was entered into the tables.
-    </li>
-    <li>
-      A query was created to filter for <strong>Julie Briggs</strong> and display all of her ticket purchases.
-    </li>
-    <li>
+      I then clicked "run this queery" from the top tabs and the results were generated in a new table above.
       The total amount paid was calculated by multiplying price by quantity for each order
       and summing the results.
     </li>
