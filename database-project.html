@@ -1,190 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Database Project</title>
-<style>
-body {
-  font-family: Arial, sans-serif;
-  max-width: 900px;
-  margin: 40px auto;
-  line-height: 1.6;
-}
-h1, h2, h3 {
-  margin-top: 30px;
-}
-pre, code {
-  background: #f4f4f4;
-  padding: 10px;
-  display: block;
-  overflow-x: auto;
-}
-a {
-  color: #0066cc;
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
-}
-</style>
+  <meta charset="UTF-8">
+  <title>Database Project</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      padding: 40px;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 900px;
+      background: #ffffff;
+      padding: 30px;
+      margin: auto;
+      border-radius: 6px;
+    }
+    h1, h2 {
+      color: #333;
+    }
+    a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+    img {
+      max-width: 100%;
+      border: 1px solid #ccc;
+      margin: 15px 0;
+    }
+    .answer {
+      font-size: 1.3em;
+      font-weight: bold;
+      color: #0a4;
+    }
+  </style>
 </head>
 <body>
 
-<h1>Database Project</h1>
+<div class="container">
 
-<p>
-This project explores how raw CSV data can be organized into a relational
-database and queried to better understand customer activity, events,
-and ticket sales.
-</p>
+  <h1>Database Project</h1>
 
-<hr>
+  <h2>Overview</h2>
+  <p>
+    This project demonstrates how a relational database can be used to store and analyze
+    ticket purchasing data. The database was created using LibreOffice Base and structured
+    to model real-world relationships between customers, orders, and shows.
+  </p>
 
-<h2>Project Overview</h2>
+  <h2>Process (Proof of Work)</h2>
+  <p>The database was created and tested using the following steps:</p>
+  <ol>
+    <li>
+      A new LibreOffice Base database file was created.
+    </li>
+    <li>
+      Three tables were designed:
+      <ul>
+        <li><strong>Customers</strong> – stores customer information such as first and last name</li>
+        <li><strong>Orders</strong> – stores ticket purchases including price and quantity</li>
+        <li><strong>Shows</strong> – stores show details such as title</li>
+      </ul>
+    </li>
+    <li>
+      Relationships were created so that each order is linked to a customer and a show.
+    </li>
+    <li>
+      The provided data was entered into the tables.
+    </li>
+    <li>
+      A query was created to filter for <strong>Julie Briggs</strong> and display all of her ticket purchases.
+    </li>
+    <li>
+      The total amount paid was calculated by multiplying price by quantity for each order
+      and summing the results.
+    </li>
+  </ol>
 
-<p>
-The dataset provided for this project consists of three CSV files that
-represent a small ticketing system. Each file contains information about
-a different part of the system.
-</p>
+  <h2>Query Evidence</h2>
+  <p>
+    The screenshot below shows the query results for Julie Briggs. It displays two orders:
+    one ticket priced at $10 and two tickets priced at $10 each.
+  </p>
 
-<ul>
-  <li><strong>Customers</strong> – individuals purchasing tickets</li>
-  <li><strong>Shows</strong> – events available for purchase</li>
-  <li><strong>Orders</strong> – transactions connecting customers to shows</li>
-</ul>
+  <img src="julie-briggs-query.png" alt="Julie Briggs ticket purchase query results">
 
-<p>
-Rather than working with these files as separate spreadsheets, the data
-was combined into a relational database so that relationships between
-customers, shows, and orders could be clearly defined and queried.
-</p>
+  <h2>Working Files</h2>
+  <p>
+    The LibreOffice Base database file used for this project is included below:
+  </p>
+  <ul>
+    <li>
+      <a href="3135 Data Base Project.odb" download>
+        Download Database File (3135 Data Base Project.odb)
+      </a>
+    </li>
+  </ul>
 
-<hr>
+  <h2>Final Answer</h2>
+  <p class="answer">
+    How much has Julie Briggs paid for her tickets? <br>
+    $30
+  </p>
 
-<h2>Database Design</h2>
-
-<p>
-The database was designed using three tables: Customers, Shows, and Orders.
-Each table has a primary key, and the Orders table uses foreign keys to
-reference both customers and shows.
-</p>
-
-<p>
-This structure creates two one-to-many relationships:
-</p>
-
-<ul>
-  <li>One customer can place many orders</li>
-  <li>One show can appear in many orders</li>
-</ul>
-
-<p>
-This design reduces data duplication and allows information to be
-retrieved efficiently using joins.
-</p>
-
-<hr>
-
-<h2>Analytical Questions</h2>
-
-<p>
-To demonstrate how the database can be queried, the following questions
-were explored:
-</p>
-
-<ul>
-  <li>Which shows generated the most revenue?</li>
-  <li>Which customers spent the most on tickets?</li>
-</ul>
-
-<hr>
-
-<h2>SQL Queries</h2>
-
-<h3>Revenue by Show</h3>
-
-<pre><code>
-SELECT 
-  s.title,
-  SUM(o.qty * o.price) AS total_revenue
-FROM Orders o
-JOIN Shows s ON o.show_id = s.show_id
-GROUP BY s.title
-ORDER BY total_revenue DESC;
-</code></pre>
-
-<h3>Top Customers by Spending</h3>
-
-<pre><code>
-SELECT 
-  c.first_name || ' ' || c.last_name AS customer_name,
-  SUM(o.qty * o.price) AS total_spent
-FROM Orders o
-JOIN Customers c ON o.customer_id = c.customer_id
-GROUP BY c.customer_id
-ORDER BY total_spent DESC;
-</code></pre>
-
-<hr>
-
-<h2>Results Summary</h2>
-
-<p>
-The results show clear differences in both show popularity and customer
-spending. Some shows generated significantly more revenue than others,
-and a small number of customers accounted for a large portion of total
-ticket sales.
-</p>
-
-<p>
-These queries demonstrate how a relational database can be used to extract
-meaningful insights from structured data.
-</p>
-
-<hr>
-
-<h2>Step-by-Step Process (Proof)</h2>
-
-<ol>
-  <li>Downloaded and reviewed the provided CSV files.</li>
-  <li>Identified entities and relationships within the data.</li>
-  <li>Designed a relational schema with primary and foreign keys.</li>
-  <li>Created the database using SQLite.</li>
-  <li>Imported the CSV data into the appropriate tables.</li>
-  <li>Validated relationships and record counts.</li>
-  <li>Executed SQL queries to analyze ticket sales and revenue.</li>
-</ol>
-
-<hr>
-
-<h2>Working Files</h2>
-
-<p>
-The following working files support the design, implementation, and analysis
-of this database project:
-</p>
-
-<ul>
-  <li><a href="mt_ticketing.sqlite">SQLite database file</a></li>
-  <li><a href="schema.sql">Database schema (SQL)</a></li>
-  <li><a href="queries.sql">SQL queries</a></li>
-  <li><a href="PROOF.md">Step-by-step process (proof)</a></li>
-  <li><a href="ERD.txt">Entity Relationship Diagram (ERD)</a></li>
-  <li><a href="revenue_by_show.csv">Revenue by show (CSV)</a></li>
-  <li><a href="revenue_by_country.csv">Revenue by country (CSV)</a></li>
-  <li><a href="top_customers_by_spend.csv">Top customers by spend (CSV)</a></li>
-  <li><a href="orders_detail_with_totals.csv">Order details with totals (CSV)</a></li>
-</ul>
-
-<p>
-The original CSV datasets provided for the assignment were used as the source
-data and are included separately.
-</p>
-<p>
-The database file, SQL scripts, and exported query results used in this
-project are available upon request.
-</p>
+</div>
 
 </body>
 </html>
